@@ -1,4 +1,3 @@
-
 FROM ubuntu:latest
 MAINTAINER Manfred Touron m@42.am
 
@@ -25,10 +24,10 @@ ENTRYPOINT ["/start"]
 
 # WOWZA
 RUN cd /tmp && \
-    wget -q http://www.wowza.com/downloads/WowzaMediaServer-3-6-3/WowzaMediaServer-3.6.3.deb.bin && \
-    chmod +x /tmp/WowzaMediaServer*.bin && \
-    echo "yes" | /tmp/WowzaMediaServer*.bin && \
-    rm -f /tmp/WowzaMediaServer*.bin && \
+    wget -q http://www.wowza.com/downloads/WowzaStreamingEngine-4-1-0/WowzaStreamingEngine-4.1.0.deb.bin && \
+    chmod +x /tmp/WowzaStreamingEngine*.bin && \
+    echo "yes" | /tmp/WowzaStreamingEngine*.bin && \
+    rm -f /tmp/WowzaStreamingEngine*.bin && \
     touch /usr/local/WowzaMediaServer/conf/Server.license && \
     chmod 777 /usr/local/WowzaMediaServer/conf/Server.license
 # cd /usr/local/WowzaMediaServer/bin
